@@ -10,7 +10,7 @@
 //link list struct
 typedef struct sv
 {
-  char ten[30];
+	char ten[30];
 	unsigned int tuoi;
 	float diemTB;
 	struct sv* next;
@@ -175,10 +175,10 @@ void del(void)
 		}
 		//update pointer (preptr ->next = ptr)
 		else
-        {
-            preptr = ptr;
-            ptr = ptr->next;
-        }
+        	{
+	            preptr = ptr;
+	            ptr = ptr->next;
+       		}
 	}
 	print_list();
 }
