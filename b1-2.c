@@ -55,10 +55,9 @@ int main(void)
 	while (ptr != NULL)
 	{
 		tmp = ptr;
-		free(ptr);
 		ptr = ptr->next;
+		free(tmp);
 	}
-	free(tmp);
 	return 0;
 }
 
