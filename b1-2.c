@@ -26,7 +26,8 @@ sv* first = NULL;
 int main(void)
 {
 	int c;
-	sv* ptr = NULL;
+	sv* ptr, *tmp;
+	ptr = tmp = NULL;
 	do
 	{
 		printf("MENU\n\n");
@@ -53,9 +54,11 @@ int main(void)
 	//free list after use
 	while (ptr != NULL)
 	{
+		tmp = ptr;
 		free(ptr);
 		ptr = ptr->next;
 	}
+	free(tmp);
 	return 0;
 }
 
@@ -63,7 +66,7 @@ int main(void)
 void add(void)
 {
 	//create newptr using malloc
-	sv* newptr = malloc(sizeof(sv));
+	sv* newptr = (sv*) malloc(sizeof(sv));
 	newptr->next = NULL;
 	printf("Ho ten : ");
 	fflush(stdin);
