@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <conio.h>
 //#include <unistd.h> ( for sleep();)
 
 //link list struct
@@ -58,6 +59,7 @@ int main(void)
 		ptr = ptr->next;
 		free(tmp);
 	}
+	getch();
 	return 0;
 }
 
